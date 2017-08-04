@@ -19,7 +19,6 @@ namespace BoaTest
 
             Console.WriteLine("\n");
             Console.WriteLine("Here is the solution for printing only the even indexes of the sequence");
-            Console.WriteLine("\n");
 
             //Test with True
             BoaQuestionSolution(number, true);            
@@ -71,18 +70,17 @@ namespace BoaTest
         {
             Console.Write(current);
 
+
             if (counterIndex < number)
             {
-                Console.Write(" ,");
+                Console.Write(", ");
                 Fibonacci(next, current + next, counterIndex + 1, number, false);
             }
             else
             {
-                if (counterIndex == number)
-                {
-                    Console.Write(".");
-                }
+                Console.Write(".");
             }
+                
         }
 
         private static void PrintEvenIndexsFibonacci(double current, double next, int counterIndex, int number)
@@ -92,7 +90,7 @@ namespace BoaTest
                 Console.Write(current);
 
 
-                if (counterIndex < number && counterIndex < number)
+                if (counterIndex < number)
                 {
                     Console.Write(", ");
                 }
