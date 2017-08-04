@@ -10,14 +10,23 @@ namespace BoaTest
             Console.WriteLine("Please enter current number");
             Console.WriteLine("Will be used as the given input for current fibonacci stating at 0.");
 
+            //This will be used as the given input 
             int number = Convert.ToInt32(Console.ReadLine());
 
-            //Assuming we use the modern usage of Fibonacci  we start at 0 and not 1
-            //https://en.wikipedia.org/wiki/Fibonacci_number
-            Fibonacci(0, 1, 1, number);
+            //bool to determine we we should display only even indexs - the first number in Fibonacci 0 is considered to be position 1
+            bool dispalyOnlyEvenIndexsInFibonacci = true;
+
+            BoaQuestionSolution(number, dispalyOnlyEvenIndexsInFibonacci);           
 
             Console.ReadLine();
 
+        }
+
+        private static void BoaQuestionSolution(int number, bool dispalyOnlyEvenIndexsInFibonacci)
+        {
+            //Assuming we use the modern usage of Fibonacci  we start at 0 and not 1
+            //https://en.wikipedia.org/wiki/Fibonacci_number
+            Fibonacci(0, 1, 1, number);
         }
 
         //https://www.dotnetperls.com/fibonacci        
