@@ -8,19 +8,22 @@ namespace BoaTest
         {
 
             Console.WriteLine("Please enter current number");
-            Console.WriteLine("Will be used as the given input for current Fibonacci stating at 0.");
+            Console.WriteLine("Will be used as the given input for printing Fibonacci sequence stating at 0.");
 
             //This will be used as the given input 
             int number = Convert.ToInt32(Console.ReadLine());
-            
-            //Test with True
-            BoaQuestionSolution(number, true);
 
-            Console.WriteLine("\n");
 
             //Test with False
             BoaQuestionSolution(number);
 
+            Console.WriteLine("\n");
+            Console.WriteLine("Here is the solution for printing only the even indexes of the sequence");
+            Console.WriteLine("\n");
+
+            //Test with True
+            BoaQuestionSolution(number, true);            
+            
             Console.ReadLine();
 
         }
@@ -36,8 +39,10 @@ namespace BoaTest
         /// Secondary optional input parameter to display only the even indexes of the sequence.  
         /// So, for example, if the user entered "6 true", their program should display 1,2,5. 
         /// </summary>
+        ///         
         /// <param name="number">Indicate how many numbers of the sequence to display</param>
         /// <param name="shouldDisplayOnlyEvenIndexes">Secondary optional input parameter to display only the even indexes of the sequence</param>
+
         private static void BoaQuestionSolution(int number, bool shouldDisplayOnlyEvenIndexes = false)
         {
             //Assuming we use the modern usage of Fibonacci  we start at 0 and not 1
@@ -45,9 +50,9 @@ namespace BoaTest
             Fibonacci(0, 1, 1, number, shouldDisplayOnlyEvenIndexes);
         }
 
-        
-        //Will not work past the 47th num if we use ints (so we use double) see for ref: 
-        //https://www.dotnetperls.com/fibonacci
+
+        //A recursive function - that will print the Fibonacci sequence.
+        //Note: won't work if we use int passed the number 47 (so we use double) see for ref: https://www.dotnetperls.com/fibonacci        
         public static void Fibonacci(double current, double next, int counterIndex, int number, bool shouldDisplayOnlyEvenIndexes)
         {            
 
